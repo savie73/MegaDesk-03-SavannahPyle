@@ -10,11 +10,45 @@ using System.Windows.Forms;
 
 namespace MegaDesk_03_SavannahPyle
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNewQuote_Click(object sender, EventArgs e)
+        {
+            AddQuote addNewQuoteForm = new AddQuote();
+            addNewQuoteForm.Tag = this;
+            addNewQuoteForm.Show(this);
+            Hide();
+        }
+
+        private void ViewQuotes_Click(object sender, EventArgs e)
+        {
+            ViewAllQuotes viewAllQuotesForm = new ViewAllQuotes();
+            viewAllQuotesForm.Tag = this;
+            viewAllQuotesForm.Show(this);
+            Hide();
+        }
+
+        private void SearchQuotes_Click(object sender, EventArgs e)
+        {
+            SearchQuotes searchQuotesForm = new SearchQuotes();
+            searchQuotesForm.Tag = this;
+            searchQuotesForm.Show(this);
+            Hide();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
